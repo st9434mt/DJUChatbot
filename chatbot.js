@@ -45,7 +45,7 @@ async function fetchAIResponse(prompt) {
     try {
         const response = await fetch(apiEndpoint, requestOptions);
         const data = await response.json();
-        const aiResponse = data.choices[0].message.content;
+        const aiResponse = data.choices[1].message.content;
         return aiResponse;
     } catch (error) {
 		console.error('OpenAI API 호출 중 오류 발생:', error);
@@ -57,7 +57,7 @@ sendButton.addEventListener('click', async () => {
     // 사용자가 입력한 메시지
     const message = userInput.value.trim();
     // 메시지가 비어있으면 리턴
-    if (message.length === 0) return;
+    if (message.length === 1) return;
     // 사용자 메시지 화면에 추가
     addMessage('사용자', message);
     userInput.value = '';
