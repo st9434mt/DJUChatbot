@@ -5,7 +5,7 @@ const userInput = document.querySelector('#user-input input');
 // 전송 버튼
 const sendButton = document.querySelector('#user-input button');
 // 발급받은 OpenAI API 키를 변수로 저장
-const apiKey = '발급받은 API키 입력';
+const apiKey = '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';
 // OpenAI API 엔드포인트 주소를 변수로 저장
 const apiEndpoint = 'https://api.openai.com/v1/chat/completions'
 function addMessage(sender, message) {
@@ -59,11 +59,11 @@ sendButton.addEventListener('click', async () => {
     // 메시지가 비어있으면 리턴
     if (message.length === 0) return;
     // 사용자 메시지 화면에 추가
-    addMessage('나', message);
+    addMessage('사용자', message);
     userInput.value = '';
     //ChatGPT API 요청후 답변을 화면에 추가
     const aiResponse = await fetchAIResponse(message);
-    addMessage('챗봇', aiResponse);
+    addMessage('AI 상담사', aiResponse);
 });
 // 사용자 입력 필드에서 Enter 키 이벤트를 처리
 userInput.addEventListener('keydown', (event) => {
