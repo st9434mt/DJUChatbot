@@ -45,7 +45,7 @@ async function fetchAIResponse(prompt) {
     try {
         const response = await fetch(apiEndpoint, requestOptions);
         const data = await response.json();
-        const aiResponse = data.choices[0].message.content;
+        const aiResponse = data.choices[1].message.content;
         return aiResponse;
     } catch (error) {
 		console.error('OpenAI API 호출 중 오류 발생:', error);
