@@ -7,7 +7,7 @@ const sendButton = document.querySelector('#user-input button');
 // 발급받은 OpenAI API 키를 변수로 저장
 const apiKey = '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';
 // OpenAI API 엔드포인트 주소를 변수로 저장
-const apiEndpoint = 'https://api.openai.com/v1/chat/completions'
+const apiEndpoint = 'https://api.openai.com/v1 /completions'
 function addMessage(sender, message) {
     // 새로운 div 생성
     const messageElement = document.createElement('div');
